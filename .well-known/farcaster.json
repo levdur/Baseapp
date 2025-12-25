@@ -21,7 +21,6 @@
     "screenshotUrls": ["https://baseapp-delta.vercel.app/preview.png"],
     "ogTitle": "Sayı Tahmin Oyunu",
     "ogDescription": "1-100 arasında tutulan sayıyı en az denemede bul!",
-    "ogImageUrl": "https://baseapp-delta.vercel.app/preview.png",
-    "noindex": false
+    "ogImageUrl": "https://baseapp-delta.vercel.app/preview.png"
   }
 }
