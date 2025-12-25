@@ -1,8 +1,5 @@
 import { sdk } from 'https://esm.sh/@farcaster/frame-sdk';
 
-// Farcaster SDK ready
-sdk.actions.ready();
-
 // Game state
 let secretNumber;
 let attempts;
@@ -82,6 +79,9 @@ guessBtn.addEventListener('touchend', () => {
 
 // Start game
 initGame();
+
+// Farcaster SDK ready - call after everything is loaded
+sdk.actions.ready();
 
 
 
