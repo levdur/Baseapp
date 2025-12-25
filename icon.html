@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icon Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #1a1a2e;
+            color: #fff;
+            padding: 40px;
+            text-align: center;
+        }
+        canvas {
+            border: 2px solid #333;
+            margin: 20px;
+            border-radius: 16px;
+        }
+        .download-btn {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 24px;
+            background: #e94560;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+        .download-btn:hover {
+            background: #ff6b6b;
+        }
+        h2 {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Icon Generator</h1>
+    
+    <h2>icon.png (200x200)</h2>
+    <canvas id="iconCanvas" width="200" height="200"></canvas>
+    <br>
+    <button class="download-btn" onclick="downloadIcon()">Download icon.png</button>
+    
+    <h2>preview.png (600x400)</h2>
+    <canvas id="previewCanvas" width="600" height="400"></canvas>
+    <br>
+    <button class="download-btn" onclick="downloadPreview()">Download preview.png</button>
+
+    <script>
+        // Draw Icon (200x200)
+        function drawIcon() {
+            const canvas = document.getElementById('iconCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Background gradient
+            const gradient = ctx.createLinearGradient(0, 0, 200, 200);
+            gradient.addColorStop(0, '#1a1a2e');
+            gradient.addColorStop(0.5, '#16213e');
+            gradient.addColorStop(1, '#0f3460');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 200, 200);
+            
+            // Target circle outer
+            ctx.beginPath();
+            ctx.arc(100, 100, 70, 0, Math.PI * 2);
+            ctx.strokeStyle = '#e94560';
+            ctx.lineWidth = 8;
+            ctx.stroke();
+            
+            // Target circle middle
+            ctx.beginPath();
+            ctx.arc(100, 100, 45, 0, Math.PI * 2);
+            ctx.strokeStyle = '#ff6b6b';
+            ctx.lineWidth = 6;
+            ctx.stroke();
+            
+            // Target circle inner
+            ctx.beginPath();
+            ctx.arc(100, 100, 20, 0, Math.PI * 2);
+            ctx.fillStyle = '#e94560';
+            ctx.fill();
+            
+            // Question mark
+            ctx.fillStyle = '#fff';
+            ctx.font = 'bold 24px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('?', 100, 100);
+        }
+        
+        // Draw Preview (600x400)
+        function drawPreview() {
+            const canvas = document.getElementById('previewCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Background gradient
+            const gradient = ctx.createLinearGradient(0, 0, 600, 400);
+            gradient.addColorStop(0, '#1a1a2e');
+            gradient.addColorStop(0.5, '#16213e');
+            gradient.addColorStop(1, '#0f3460');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 600, 400);
+            
+            // Target icon (left side)
+            ctx.beginPath();
+            ctx.arc(150, 200, 80, 0, Math.PI * 2);
+            ctx.strokeStyle = '#e94560';
+            ctx.lineWidth = 10;
+            ctx.stroke();
+            
+            ctx.beginPath();
+            ctx.arc(150, 200, 50, 0, Math.PI * 2);
+            ctx.strokeStyle = '#ff6b6b';
+            ctx.lineWidth = 7;
+            ctx.stroke();
+            
+            ctx.beginPath();
+            ctx.arc(150, 200, 22, 0, Math.PI * 2);
+            ctx.fillStyle = '#e94560';
+            ctx.fill();
+            
+            ctx.fillStyle = '#fff';
+            ctx.font = 'bold 28px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('?', 150, 200);
+            
+            // Title text
+            ctx.fillStyle = '#fff';
+            ctx.font = 'bold 48px Arial';
+            ctx.textAlign = 'left';
+            ctx.fillText('Sayı Tahmin', 280, 180);
+            
+            // Subtitle
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+            ctx.font = '24px Arial';
+            ctx.fillText('1-100 arası sayıyı bul!', 280, 230);
+        }
+        
+        function downloadIcon() {
+            const canvas = document.getElementById('iconCanvas');
+            const link = document.createElement('a');
+            link.download = 'icon.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+        
+        function downloadPreview() {
+            const canvas = document.getElementById('previewCanvas');
+            const link = document.createElement('a');
+            link.download = 'preview.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+        
+        // Draw on load
+        drawIcon();
+        drawPreview();
+    </script>
+</body>
+</html>
+
+
+

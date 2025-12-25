@@ -1,0 +1,87 @@
+import { sdk } from 'https://esm.sh/@farcaster/frame-sdk';
+
+// Farcaster SDK ready
+sdk.actions.ready();
+
+// Game state
+let secretNumber;
+let attempts;
+
+// DOM elements
+const guessInput = document.getElementById('guessInput');
+const guessBtn = document.getElementById('guessBtn');
+const feedback = document.getElementById('feedback');
+const attemptsDiv = document.getElementById('attempts');
+const restartBtn = document.getElementById('restartBtn');
+
+// Initialize game
+function initGame() {
+    secretNumber = Math.floor(Math.random() * 100) + 1;
+    attempts = 0;
+    guessInput.value = '';
+    guessInput.disabled = false;
+    guessBtn.disabled = false;
+    feedback.textContent = '';
+    feedback.className = 'feedback';
+    attemptsDiv.textContent = '';
+    restartBtn.classList.add('hidden');
+    guessInput.focus();
+}
+
+// Handle guess
+function handleGuess() {
+    const guess = parseInt(guessInput.value);
+    
+    if (isNaN(guess) || guess < 1 || guess > 100) {
+        feedback.textContent = '1-100 arası bir sayı gir!';
+        feedback.className = 'feedback';
+        return;
+    }
+    
+    attempts++;
+    attemptsDiv.textContent = `Deneme: ${attempts}`;
+    
+    if (guess === secretNumber) {
+        feedback.textContent = `🎉 Tebrikler! ${attempts} denemede buldun!`;
+        feedback.className = 'feedback correct';
+        guessInput.disabled = true;
+        guessBtn.disabled = true;
+        restartBtn.classList.remove('hidden');
+    } else if (guess < secretNumber) {
+        feedback.textContent = '📈 Daha büyük!';
+        feedback.className = 'feedback higher';
+        guessInput.value = '';
+        guessInput.focus();
+    } else {
+        feedback.textContent = '📉 Daha küçük!';
+        feedback.className = 'feedback lower';
+        guessInput.value = '';
+        guessInput.focus();
+    }
+}
+
+// Event listeners
+guessBtn.addEventListener('click', handleGuess);
+
+guessInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        handleGuess();
+    }
+});
+
+restartBtn.addEventListener('click', initGame);
+
+// Touch feedback
+guessBtn.addEventListener('touchstart', () => {
+    guessBtn.style.transform = 'scale(0.98)';
+});
+
+guessBtn.addEventListener('touchend', () => {
+    guessBtn.style.transform = 'scale(1)';
+});
+
+// Start game
+initGame();
+
+
+

@@ -1,0 +1,29 @@
+{
+  "accountAssociation": {
+    "header": "[FARCASTER'DAN ALINACAK]",
+    "payload": "[FARCASTER'DAN ALINACAK]",
+    "signature": "[FARCASTER'DAN ALINACAK]"
+  },
+  "frame": {
+    "version": "1",
+    "name": "Sayı Tahmin Oyunu",
+    "subtitle": "1-100 arası sayıyı bul!",
+    "description": "Klasik sayı tahmin oyunu. Uygulama 1-100 arasında bir sayı tutar, sen tahmin edersin. Her tahminde daha büyük veya daha küçük ipucu alırsın.",
+    "iconUrl": "https://[DOMAIN]/icon.png",
+    "homeUrl": "https://[DOMAIN]",
+    "imageUrl": "https://[DOMAIN]/preview.png",
+    "splashImageUrl": "https://[DOMAIN]/icon.png",
+    "splashBackgroundColor": "#1a1a2e",
+    "primaryCategory": "games",
+    "tags": ["game", "arcade", "farcaster"],
+    "tagline": "Sayıyı tahmin et, kazan!",
+    "heroImageUrl": "https://[DOMAIN]/preview.png",
+    "screenshotUrls": ["https://[DOMAIN]/preview.png"],
+    "ogTitle": "Sayı Tahmin Oyunu",
+    "ogDescription": "1-100 arasında tutulan sayıyı en az denemede bul!",
+    "ogImageUrl": "https://[DOMAIN]/preview.png"
+  }
+}
+
+
+

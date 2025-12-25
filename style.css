@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #fff;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 40px 30px;
+    width: 100%;
+    max-width: 360px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    background: linear-gradient(90deg, #e94560, #ff6b6b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 30px;
+    font-size: 1rem;
+}
+
+.game-area {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+#guessInput {
+    width: 100%;
+    padding: 18px;
+    font-size: 1.5rem;
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#guessInput:focus {
+    border-color: #e94560;
+    box-shadow: 0 0 20px rgba(233, 69, 96, 0.3);
+}
+
+#guessInput::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+#guessBtn {
+    width: 100%;
+    padding: 18px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #e94560, #ff6b6b);
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#guessBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(233, 69, 96, 0.4);
+}
+
+#guessBtn:active {
+    transform: translateY(0);
+}
+
+.feedback {
+    font-size: 1.3rem;
+    font-weight: 600;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.feedback.higher {
+    color: #ff6b6b;
+}
+
+.feedback.lower {
+    color: #4ecdc4;
+}
+
+.feedback.correct {
+    color: #a8e6cf;
+    font-size: 1.5rem;
+}
+
+.attempts {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1rem;
+    min-height: 24px;
+}
+
+.restart-btn {
+    margin-top: 20px;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 2px solid #4ecdc4;
+    border-radius: 12px;
+    background: transparent;
+    color: #4ecdc4;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.restart-btn:hover {
+    background: #4ecdc4;
+    color: #1a1a2e;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Remove number input arrows */
+#guessInput::-webkit-outer-spin-button,
+#guessInput::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#guessInput[type=number] {
+    -moz-appearance: textfield;
+}
+
+
+
