@@ -30,27 +30,27 @@ function handleGuess() {
     const guess = parseInt(guessInput.value);
     
     if (isNaN(guess) || guess < 1 || guess > 100) {
-        feedback.textContent = '1-100 arası bir sayı gir!';
+        feedback.textContent = 'Enter a number 1-100!';
         feedback.className = 'feedback';
         return;
     }
     
     attempts++;
-    attemptsDiv.textContent = `Deneme: ${attempts}`;
+    attemptsDiv.textContent = `Attempts: ${attempts}`;
     
     if (guess === secretNumber) {
-        feedback.textContent = `🎉 Tebrikler! ${attempts} denemede buldun!`;
+        feedback.textContent = `🎉 You found it in ${attempts} tries!`;
         feedback.className = 'feedback correct';
         guessInput.disabled = true;
         guessBtn.disabled = true;
         restartBtn.classList.remove('hidden');
     } else if (guess < secretNumber) {
-        feedback.textContent = '📈 Daha büyük!';
+        feedback.textContent = '📈 Higher!';
         feedback.className = 'feedback higher';
         guessInput.value = '';
         guessInput.focus();
     } else {
-        feedback.textContent = '📉 Daha küçük!';
+        feedback.textContent = '📉 Lower!';
         feedback.className = 'feedback lower';
         guessInput.value = '';
         guessInput.focus();

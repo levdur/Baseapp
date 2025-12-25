@@ -6,9 +6,9 @@
   },
   "frame": {
     "version": "1",
-    "name": "Sayı Tahmin Oyunu",
-    "subtitle": "1-100 arası sayıyı bul!",
-    "description": "Klasik sayı tahmin oyunu. Uygulama 1-100 arasında bir sayı tutar, sen tahmin edersin. Her tahminde daha büyük veya daha küçük ipucu alırsın.",
+    "name": "Find Number",
+    "subtitle": "Guess the number 1-100!",
+    "description": "Classic number guessing game. The app holds a random number between 1-100, you guess it. Get hints like higher or lower with each guess.",
     "iconUrl": "https://baseapp-delta.vercel.app/icon.png",
     "homeUrl": "https://baseapp-delta.vercel.app",
     "imageUrl": "https://baseapp-delta.vercel.app/preview.png",
@@ -16,11 +16,11 @@
     "splashBackgroundColor": "#1a1a2e",
     "primaryCategory": "games",
     "tags": ["game", "arcade", "farcaster"],
-    "tagline": "Sayıyı tahmin et, kazan!",
+    "tagline": "Find the number, win!",
     "heroImageUrl": "https://baseapp-delta.vercel.app/preview.png",
     "screenshotUrls": ["https://baseapp-delta.vercel.app/preview.png"],
-    "ogTitle": "Sayı Tahmin Oyunu",
-    "ogDescription": "1-100 arasında tutulan sayıyı en az denemede bul!",
+    "ogTitle": "Find Number",
+    "ogDescription": "Find the hidden number between 1-100 in fewest attempts!",
     "ogImageUrl": "https://baseapp-delta.vercel.app/preview.png"
   }
 }

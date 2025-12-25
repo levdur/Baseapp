@@ -5,23 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="fc:frame" content="vNext">
     <meta name="base:app_id" content="[SONRA EKLENECEK]">
-    <title>Sayı Tahmin Oyunu</title>
+    <title>Find Number</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>🎯 Sayı Tahmin</h1>
-        <p class="subtitle">1-100 arasında bir sayı tuttum!</p>
+        <h1>🎯 Find Number</h1>
+        <p class="subtitle">I'm thinking of a number 1-100!</p>
         
         <div class="game-area">
-            <input type="number" id="guessInput" min="1" max="100" placeholder="Tahminin?" inputmode="numeric">
-            <button id="guessBtn">Tahmin Et</button>
+            <input type="number" id="guessInput" min="1" max="100" placeholder="Your guess?" inputmode="numeric">
+            <button id="guessBtn">Guess</button>
         </div>
         
         <div id="feedback" class="feedback"></div>
         <div id="attempts" class="attempts"></div>
         
-        <button id="restartBtn" class="restart-btn hidden">Yeni Oyun</button>
+        <button id="restartBtn" class="restart-btn hidden">New Game</button>
     </div>
     
     <script type="module" src="game.js"></script>

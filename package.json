@@ -1,5 +1,5 @@
 {
-  "name": "sayi-tahmin-oyunu",
+  "name": "find-number",
   "version": "1.0.0",
   "scripts": {
     "dev": "npx serve . -p 3000"
